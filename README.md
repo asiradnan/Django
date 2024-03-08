@@ -1,4 +1,10 @@
 # Django
-```bash sudo apt install python3-pip ``` <br>
-```bashsudo apt install python3-django ``` <br>
-```bash django startproject MedicalService ``` <br>
+```bash 
+sudo apt install python3-pip
+``` 
+```bash
+sudo apt install python3-django
+```
+```bash 
+django startproject MedicalService
+```
