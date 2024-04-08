@@ -6,7 +6,7 @@ sudo apt install python3-pip
 sudo apt install python3-django
 ```
 ```bash 
-django startproject MedicalService
+django-admin startproject MedicalService
 ```
 ## Connecting mysql
 ```bash
