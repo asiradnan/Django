@@ -23,6 +23,7 @@ django-admin startapp appName
  ![alt text](image-5.png)
 ###### &nbsp;&nbsp; 2. Include your new app's urls in the main urls.py:
 ![alt text](image-6.png)
+
 [Note: *You need create a urls.py file under new app and import the include method like shown in screenshot*]
 ## Rendering HTML templates
 To connect a directory (folder) named *templates*, which will contail all of your HTML templates, you need to connect it with your project. Once you connect it by writing some codes in your settings.py file, you are ready to render any amount of HTML templates in your project.
