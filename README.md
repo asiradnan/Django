@@ -39,7 +39,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 ```
-*It should look like the screenshot below:*
+\
+*It should look like the screenshot below:* 
+\
 ![alt text](image-7.png)
 
 ## Connecting mysql
