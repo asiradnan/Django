@@ -29,7 +29,7 @@ django-admin startapp appName
 To connect a directory (folder) named *templates*, which will contail all of your HTML templates, you need to connect it with your project. Once you connect it by writing some codes in your settings.py file, you are ready to render any amount of HTML templates in your project.
 ###### &nbsp;&nbsp; 1. Import os :
 ![alt text](image-4.png)
-###### &nbsp;&nbsp; 2. After importing os, add the highlighted course :
+###### &nbsp;&nbsp; 2. After importing os, add the highlighted line of code :
 ![alt text](image-3.png)
 ## Connecting CSS 
 Once you follow this step you can connect as many static files as you want in your project without having to make any change in your settings.py 
