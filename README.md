@@ -26,7 +26,7 @@ django-admin startapp appName
 
 [Note: *You need create a urls.py file under new app and import the include method like shown in screenshot*]
 ## Rendering HTML templates
-To connect a directory (folder) named **templates**, which will contail all of your HTML templates, you need to connect it with your project. Once you connect it by writing some codes in your settings.py file, you are ready to render any amount of HTML templates in your project.
+To connect a directory (folder) named **templates**, which will contain all of your HTML templates, you need to connect it with your project. Once you connect it by writing some codes in your settings.py file, you are ready to render any amount of HTML templates in your project.
 ###### &nbsp;&nbsp; 1. Import os :
 ![alt text](screenshots/image-4.png)
 ###### &nbsp;&nbsp; 2. After importing os, add the highlighted line of code :
