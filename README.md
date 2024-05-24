@@ -13,24 +13,24 @@ sudo apt install python3-django
 django-admin startproject projectName
 ```
 ## Starting an app
-###### Run the following command when you (terminal) are at the directory same as your manage.py file. 
+###### Run the following command when you (terminal) are at the directory same as your **manage.py** file. 
 ```bash 
 django-admin startapp appName
 ```
 #### After Starting an App remember to :
 
  ###### &nbsp;&nbsp; 1. Enter the app name to INSTALLED_APPS list
- ![alt text](image-5.png)
+ ![alt text](screenshots/image-5.png)
 ###### &nbsp;&nbsp; 2. Include your new app's urls in the main urls.py:
-![alt text](image-6.png)
+![alt text](screenshots/image-6.png)
 
 [Note: *You need create a urls.py file under new app and import the include method like shown in screenshot*]
 ## Rendering HTML templates
-To connect a directory (folder) named *templates*, which will contail all of your HTML templates, you need to connect it with your project. Once you connect it by writing some codes in your settings.py file, you are ready to render any amount of HTML templates in your project.
+To connect a directory (folder) named **templates**, which will contail all of your HTML templates, you need to connect it with your project. Once you connect it by writing some codes in your settings.py file, you are ready to render any amount of HTML templates in your project.
 ###### &nbsp;&nbsp; 1. Import os :
-![alt text](image-4.png)
+![alt text](screenshots/image-4.png)
 ###### &nbsp;&nbsp; 2. After importing os, add the highlighted line of code :
-![alt text](image-3.png)
+![alt text](screenshots/image-3.png)
 \
 [Note: *Your .html files (like homepage.html) should be under a folder named **templates**, which should be in the same directory as your **manage.py** file*]
 ## Connecting CSS 
@@ -44,7 +44,7 @@ STATICFILES_DIRS = [
 \
 *It should look like the screenshot below:* 
 \
-![alt text](image-7.png)
+![alt text](screenshots/image-7.png)
 \
 Connect your static css file in the HTML template like below:
 ```
