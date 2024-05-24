@@ -31,6 +31,8 @@ To connect a directory (folder) named *templates*, which will contail all of you
 ![alt text](image-4.png)
 ###### &nbsp;&nbsp; 2. After importing os, add the highlighted line of code :
 ![alt text](image-3.png)
+\
+[Note: *Your .html files (like homepage.html) should be under a folder named **templates**, which should be in the same directory as your **manage.py** file*]
 ## Connecting CSS 
 Once you follow this step you can connect as many static files as you want in your project without having to make any change in your settings.py 
 ###### &nbsp;&nbsp;Add the following lines of code in settings.py:
@@ -43,6 +45,12 @@ STATICFILES_DIRS = [
 *It should look like the screenshot below:* 
 \
 ![alt text](image-7.png)
+\
+Connect your static css file in the HTML template like below:
+```
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+```
+[Note: *Your .css files (like styles.css) should be under a folder named **static**, which should be in the same directory as your **manage.py** file and **templates** directory*]
 
 ## Connecting mysql
 ```bash
