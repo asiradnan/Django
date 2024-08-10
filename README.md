@@ -328,7 +328,18 @@ We will have to create the *signup.html* file under templates directory.("templa
 <a href="{% url 'login' %}">Already have an account?</a>
 ```
 We used very basic example here to create an user and store more informations about the user in a separate Model with OnetoOne field with the User model. We could add more validations like matching password1 and password2.
-
+We can access the extra informations in our template like this:
+```py
+{% if user.is_authenticated %}
+Welcome, {{user.username}}! <br>
+{{ user.manush2.age }} 
+<a href="{% url 'password_change' %}">Change Password</a><br>
+<a href="{% url 'password_reset' %}">Reset Password</a><br>
+<a href="{% url 'logout' %}">Log Out</a>
+{% else %}
+<a href="{% url 'login' %}">Log In</a> or <a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
+```
 ## Email Configuration
 ```py
 EFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
