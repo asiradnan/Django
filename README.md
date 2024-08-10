@@ -264,6 +264,70 @@ Welcome, {{user.username}}! <br>
 {% endif %}
 ```
 
+### Method 3 (Creating User object and another Model object)
+
+#### Sign Up
+We will try to go beyond the basic information that built-in User model allowed us. For this example we will try to store user's age in a separate Model with OneToOne relationship. <br>
+Other Model that we are using:
+```py
+from django.db import models
+from django.contrib.auth.models import User
+
+class Manush2(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    age = models.IntegerField()
+```
+Now let's code our *views.py* file:
+```py
+from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
+from .models import Manush2
+
+def signup(request):
+    if request.method=="POST":
+        username = request.POST["username"]
+        password1 = request.POST["password1"]
+        password2 = request.POST["password2"]
+        if (User.objects.filter(username=username).exists()):
+            messages.info(request, "Username already taken!")
+            return redirect("/users/signup")
+        try:
+            validate_password(password1)
+            x= User.objects.create_user(username=username)
+            x.set_password(password1)
+        except ValidationError as e:
+            return render(request,"signup.html",{"messages":e.messages,"username":username})
+        age = request.POST["age"]
+        x.save()
+        manush = Manush2.objects.create(user=x,age=age) 
+        manush.save()
+        return redirect("login")
+    return render(request,"signup.html")
+```
+We will have to create the *signup.html* file under templates directory.("templates/signup.html")
+```py
+<form method="post">
+    {% csrf_token %}
+    {% if messages %}
+        {% for message in messages %} {{message}}
+        {%endfor%}
+    {% endif %}
+    <label for="username">Username: </label>
+    <input type="text" name="username" {% if username%} value="{{username}}" {%endif%}><br>
+    <label for="password1">Password: </label>
+    <input type="password" name="password1"><br>
+    <label for="password2">Password again: </label>
+    <input type="password" name="password2"><br>
+    <label for="age">Age: </label>
+    <input type="number" name="age"><br>
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'login' %}">Already have an account?</a>
+```
+We used very basic example here to create an user and store more informations about the user in a separate Model with OnetoOne field with the User model. We could add more validations like matching password1 and password2.
 
 ## Email Configuration
 ```py
