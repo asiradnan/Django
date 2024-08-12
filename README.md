@@ -7,9 +7,12 @@ sudo apt install python3-pip
 sudo apt install python3-django
 ```
 \
-To start a virtual environment
+To use a virtual environment
 ```bash
-python3 -m venv muslimenv
+python3 -m venv name
+```
+```bash
+source name/bin/activate
 ```
 [*Commands below work on any Operating System*]
 ## Setting up a project 
